@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "214054407080",
+    "project_id": "tietcampusfood",
+    "storage_bucket": "tietcampusfood.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214054407080:android:f828bebefdc4396e502b9d",
+        "android_client_info": {
+          "package_name": "com.tiet.campusfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214054407080-0fl8o01kqgspsi4fnj904f2h7f059cl3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPVds8zEXEZnqpuR2IEhVhTFDFKcQF188"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214054407080-0fl8o01kqgspsi4fnj904f2h7f059cl3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
