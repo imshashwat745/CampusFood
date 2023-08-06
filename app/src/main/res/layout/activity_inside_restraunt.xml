@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsideRestraunt">
+
+<!--    App Bar Layout for fixed -->
+   <com.google.android.material.appbar.AppBarLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+       <androidx.cardview.widget.CardView
+           android:id="@+id/search_card"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="15dp"
+           android:layout_marginLeft="15dp"
+           app:cardCornerRadius="50dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_scrollFlags="noScroll">
+
+
+           <EditText
+               android:id="@+id/inside_restraunt_search"
+               android:layout_width="300dp"
+               android:layout_height="50dp"
+               android:background="@drawable/search_bar_bg"
+               android:gravity="center"
+               android:hint="Search food here"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="parent">
+
+           </EditText>
+
+       </androidx.cardview.widget.CardView>
+
+           <ImageView
+               android:id="@+id/inside_restraunt_cart"
+               android:layout_width="49dp"
+               android:layout_height="48dp"
+               android:src="@drawable/cart_icon"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.916"
+               app:layout_constraintStart_toEndOf="@+id/search_card"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintVertical_bias="1.0" />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </com.google.android.material.appbar.AppBarLayout>
+
+<!--    Scrollable Views-->
+<androidx.core.widget.NestedScrollView
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/inside_restraunt_photo"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/royal_cafe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#6F000000"
+            android:tintMode="src_atop"/>
+
+        <TextView
+            android:id="@+id/inside_restraunt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/archivo_bold"
+            android:text="Royal Cafe"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/inside_restraunt_photo"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#689F38"
+            app:layout_constraintBottom_toBottomOf="@+id/inside_restraunt_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/inside_restraunt_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="4.9"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/food_items_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inside_restraunt_photo"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/food_items_bg"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

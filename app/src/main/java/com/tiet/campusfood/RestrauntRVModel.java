@@ -1,23 +1,31 @@
 package com.tiet.campusfood;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+
 public class RestrauntRVModel {
 
-    private int image;
-    private String name,location,rating,cost;
+    private String image;
+    private String name,location,rating,cost,documentID;
 
-    public RestrauntRVModel(int image, String name, String location, String rating, String cost) {
+    public RestrauntRVModel(String image, String name, String location, String rating, String cost, String documentID) {
         this.image = image;
         this.name = name;
         this.location = location;
         this.rating = rating;
         this.cost = cost;
+        this.documentID = documentID;
     }
 
-    public int getImage() {
+    public RestrauntRVModel() {
+
+    }
+
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -53,5 +61,11 @@ public class RestrauntRVModel {
         this.cost = cost;
     }
 
+    public String getDocumentID() {
+        return documentID;
+    }
 
+    public void setDocumentID(String documentID) {
+        this.documentID = documentID;
+    }
 }

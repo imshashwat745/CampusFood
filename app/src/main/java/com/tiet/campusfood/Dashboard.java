@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private Button logout;
@@ -23,19 +20,20 @@ public class Dashboard extends AppCompatActivity implements BottomNavigationView
         setContentView(R.layout.activity_dashboard);
         BottomNavigationView navigationView=findViewById(R.id.dashboard_navigation_view);
         navigationView.setOnNavigationItemSelectedListener(this );
-        navigationView.setSelectedItemId(R.id.Home);
+        navigationView.setSelectedItemId(R.id.navigation_home);
         loadDashboardFragment(new DashboardHomeFragment());
 
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        Fragment fragment=null;
-//        switch(item.getItemId()){
-//            case R.id.Home:
-//                fragment=new
-//        }
-        return loadDashboardFragment(new DashboardHomeFragment());
+        int id=item.getItemId();
+        Fragment fragment=new DashboardHomeFragment();;
+        if(id==R.id.navigation_orders){
+            fragment=new DashboardUserOrdersFragment();
+        }
+
+        return loadDashboardFragment(fragment);
     }
     private boolean loadDashboardFragment(Fragment fragment){
         if(fragment!=null){

@@ -2,15 +2,14 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/restraunt_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="14dp"
-    android:elevation="4dp"
-    app:cardCornerRadius="25dp">
+    android:elevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/restraunt_img"
@@ -41,9 +40,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:clickable="false"
-            android:fontFamily="@font/archivo_bold"
             android:drawableRight="@drawable/star_icon"
             android:drawableTint="#689F38"
+            android:fontFamily="@font/archivo_bold"
             android:text="4.9"
             android:textColor="#689F38"
             android:textSize="25sp"
@@ -70,15 +69,23 @@
             android:id="@+id/restraunt_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:alpha="0.5"
             android:fontFamily="@font/archivo_semibold"
             android:paddingBottom="20dp"
             android:text="Min.Rs.25"
             android:textSize="15sp"
-            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/restraunt_rating"
             app:layout_constraintTop_toBottomOf="@+id/restraunt_rating" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:dividerColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

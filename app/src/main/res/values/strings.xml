@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">CampusFood</string>
+    <string-array name="hostel_dropdown">
+        <item>Hostel A</item>
+        <item>Hostel B</item>
+        <item>Hostel C</item>
+        <item>Hostel H</item>
+        <item>Hostel I</item>
+        <item>Hostel J</item>
+        <item>Hostel K</item>
+        <item>Hostel L</item>
+        <item>Hostel M</item>
+        <item>Hostel N</item>
+        <item>Hostel O</item>
+        <item>Hostel Q</item>
+        <item>Hostel PG</item>
+
+    </string-array>
 </resources>
