@@ -10,9 +10,12 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Dashboard extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private Button logout;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,4 +45,6 @@ public class Dashboard extends AppCompatActivity implements BottomNavigationView
         }
         return false;
     }
+
+
 }

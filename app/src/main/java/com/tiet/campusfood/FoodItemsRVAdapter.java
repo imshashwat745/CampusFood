@@ -41,8 +41,8 @@ public class FoodItemsRVAdapter extends RecyclerView.Adapter<FoodItemsRVAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.foodName.setText(lst.get(position).getName());
         holder.foodPrice.setText("Rs."+lst.get(position).getPrice());
-        Picasso.get().load(lst.get(position).getImage()).into(holder.foodImg);
-//        Glide.with(holder.foodImg.getContext()).load(lst.get(position).getImage()).into(holder.foodImg);
+//        Picasso.get().load(lst.get(position).getImage()).into(holder.foodImg);
+        Glide.with(holder.foodImg.getContext()).load(lst.get(position).getImage()).into(holder.foodImg);
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

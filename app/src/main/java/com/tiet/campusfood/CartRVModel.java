@@ -1,16 +1,35 @@
 package com.tiet.campusfood;
 
-import android.content.Intent;
-
 public class CartRVModel {
-    private int image;
+    private String image, imageID;
+
     private String name,quantity,price,total;
 
-    public int getImage() {
+    public CartRVModel(String image, String imageID, String name, String quantity, String price, String total) {
+        this.image = image;
+        this.imageID = imageID;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+        this.total=String.valueOf(Integer.parseInt(price)*Integer.parseInt(quantity));
+    }
+
+    public String getImageID() {
+        return imageID;
+    }
+
+    public void setImageID(String imageID) {
+        this.imageID = imageID;
+    }
+
+    public CartRVModel() {
+    }
+
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -28,8 +47,6 @@ public class CartRVModel {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
-//        On quantity change this function is called from parent so update total too
-        this.total=String.valueOf(Integer.parseInt(price)*Integer.parseInt(quantity));
     }
 
     public String getPrice() {
@@ -44,16 +61,7 @@ public class CartRVModel {
         return total;
     }
 
-    public void setTotal(String total) {
-        this.total = total;
-    }
-
-    public CartRVModel(int image, String name, String quantity, String price) {
-        this.image = image;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
+    public void setTotal() {
         this.total=String.valueOf(Integer.parseInt(price)*Integer.parseInt(quantity));
     }
-
 }

@@ -267,8 +267,8 @@ SignupFragment.OnButtonClickListener{
     @Override
     public void register(String fname,String lname){
         Map<String , Object> detail=new HashMap<>();
-        detail.put("firstName","Shashwat");
-        detail.put("lastName","Shukla");
+        detail.put("firstName",fname);
+        detail.put("lastName",lname);
         db.collection("users").document(phno).
                 set(detail)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

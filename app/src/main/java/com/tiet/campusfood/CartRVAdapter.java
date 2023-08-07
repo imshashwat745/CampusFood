@@ -1,5 +1,7 @@
 package com.tiet.campusfood;
 
+import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -29,11 +34,14 @@ public class CartRVAdapter extends RecyclerView.Adapter<CartRVAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartRVAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CartRVAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.total.setText("Rs."+lst.get(position).getTotal());
         holder.quantity.setText(lst.get(position).getQuantity());
         holder.price.setText("RS."+lst.get(position).getPrice());
-        holder.img.setImageResource(lst.get(position).getImage());
+        holder.name.setText(lst.get(position).getName());
+//        holder.img.setImageResource(lst.get(position).getImage());
+//        Picasso.get().load(lst.get(position).getImage()).into(holder.img);
+        Glide.with(holder.img.getContext()).load(lst.get(position).getImage()).into(holder.img);
 
         holder.addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +69,7 @@ public class CartRVAdapter extends RecyclerView.Adapter<CartRVAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView img,addBtn,subBtn;
-        private TextView price,quantity,total;
+        private TextView price,quantity,total,name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img=itemView.findViewById(R.id.inside_restraunt_img);
@@ -70,6 +78,7 @@ public class CartRVAdapter extends RecyclerView.Adapter<CartRVAdapter.ViewHolder
             price=itemView.findViewById(R.id.cart_price);
             quantity=itemView.findViewById(R.id.cart_quantity);
             total=itemView.findViewById(R.id.cart_item_total);
+            name=itemView.findViewById(R.id.cart_name);
         }
     }
 }

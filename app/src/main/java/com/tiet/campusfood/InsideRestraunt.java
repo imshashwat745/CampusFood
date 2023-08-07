@@ -68,7 +68,7 @@ public class InsideRestraunt extends AppCompatActivity implements FoodItemsRVAda
         alreadyInCart=new HashSet<>();
         restrauntDocumentId =getIntent().getStringExtra("docID");
         /*First add already added items in a set so that it is not added again here,but incremented/decremented in cart only*/
-        restrauntDocumentId ="7905568512";
+//        restrauntDocumentId ="7905568512";
         Log.d("Reached","2");
         firebaseFirestore.collection("users").document(phno).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -84,7 +84,6 @@ public class InsideRestraunt extends AppCompatActivity implements FoodItemsRVAda
                         // Traverse every field in the document
                         for (Map.Entry<String, Object> entry : fieldsMap.entrySet()) {
                             String fieldName = entry.getKey();
-                            Object fieldValue = entry.getValue();
                             if(fieldName.equals("firstName")||fieldName.equals("lastName"))continue;
                             alreadyInCart.add(fieldName);
 
@@ -187,10 +186,11 @@ public class InsideRestraunt extends AppCompatActivity implements FoodItemsRVAda
     }
 
     private String make_key(String name) {
-        String ans="_";
         name=name.toLowerCase();
+        String ans="";
         for(int i=0;i<name.length();++i){
             if(name.charAt(i)!=' ')ans+=name.charAt(i);
+            else ans+="_";
         }
         return ans;
     }
@@ -227,7 +227,7 @@ public class InsideRestraunt extends AppCompatActivity implements FoodItemsRVAda
 
 //        Now add this item to cart
         newFields.put("cart", restrauntDocumentId);
-        newFields.put(key,1);
+        newFields.put(key,"1");
         firebaseFirestore.collection("users").document(phno).update(newFields).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
